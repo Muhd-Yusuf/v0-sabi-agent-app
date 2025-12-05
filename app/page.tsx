@@ -4,6 +4,7 @@ import Features from "@/components/landing/features"
 import BusinessModel from "@/components/landing/business-model"
 import Traction from "@/components/landing/traction"
 import Testimonials from "@/components/landing/testimonials"
+import CTASection from "@/components/landing/cta-section"
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <Features />
-      <BusinessModel />
       <Traction />
+      <BusinessModel />
       <Testimonials />
+      <CTASection />
     </div>
   )
 }
