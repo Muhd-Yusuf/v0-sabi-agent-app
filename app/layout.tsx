@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Plus_Jakarta_Sans } from "next/font/google"
 import { Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { getServerSession } from "next-auth/next"
@@ -9,8 +9,15 @@ import "./globals.css"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 
-const _inter = Inter({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+})
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
 
 export const metadata: Metadata = {
   title: "Sabi Agent - AI Content Creation for African SMEs",
@@ -44,7 +51,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${geistMono.variable} font-sans antialiased`}>
         <SessionProvider session={session}>
           <div className="flex flex-col min-h-screen">
             <Navbar />
